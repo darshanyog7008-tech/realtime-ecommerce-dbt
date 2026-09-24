@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: realtime_ecommerce
+    catalog: sdp_catalog
+    schema: realtime_ecommerce
+
+    tables:
+      - name: gold_order_fact
+        columns:
+          - name: order_id
+            data_tests:
+              - not_null
+              - unique
+
+          - name: customer_id
+            data_tests:
+              - not_null
+
+          - name: order_status
+            data_tests:
+              - not_null

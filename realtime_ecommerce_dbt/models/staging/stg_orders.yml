@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging model built from the curated gold order fact table."
+
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Customer identifier associated with the order."
+        data_tests:
+          - not_null
+
+      - name: order_status
+        description: "Current status of the order."
+        data_tests:
+          - not_null
